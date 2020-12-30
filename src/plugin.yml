@@ -1,0 +1,7 @@
+name: DiscordSound
+version: 1.1
+author: TeamKarbon
+main: Main
+description: Test
+commands:
+  discord:
