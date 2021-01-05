@@ -2,6 +2,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class MusicUtil {
     public static void addAllPlayers(){
@@ -15,6 +18,12 @@ public class MusicUtil {
         }
     }
     public static void reload(){
+        if(!Files.exists(Paths.get("plugins/musics/"))){
+            try {
+                Files.createFile(Paths.get("plugins/musics/"));
+            } catch (IOException e) {
+            }
+        }
         File folder = new File("plugins/musics/");
         Main.musicList.clear();
         for (File fileEntry : folder.listFiles()) {
