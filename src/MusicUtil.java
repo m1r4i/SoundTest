@@ -17,6 +17,12 @@ public class MusicUtil {
             Main.musicp.removePlayer(pp);
         }
     }
+    public static void setLoop(Boolean loop){
+        Main.musicp.setLoop(loop);
+    }
+    public static void setVolume(int vol){
+        Main.musicp.setVolume((byte) vol);
+    }
     public static void reload(){
         if(!Files.exists(Paths.get("plugins/musics/"))){
             try {
